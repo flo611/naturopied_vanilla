@@ -1,25 +1,10 @@
-<?php
+<?php 
 
 require_once('../../middleware/connect.php');
 
-$id = isset($_POST['id-delete']) ? $_POST['id-delete'] : null;
+$picture_name = $_POST['picture-name'];
 
+$db_connect->query("DELETE FROM `picture` WHERE picture.name = '$picture_name'");
 
-if ($id !== null && is_numeric($id)) {
+header("Location: http://localhost/public/naturopied_vanilla");
 
-    $stmt = $db_connect->prepare("DELETE FROM `picture` WHERE id = :id");
-    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-
-    $resultat = $stmt->execute();
-
-
-    if ($resultat) {
-        echo "Suppression réussie.";
-    } else {
-        echo "Erreur lors de la suppression.";
-    }
-} else {
-    echo "ID invalide.";
-}
-
-?>

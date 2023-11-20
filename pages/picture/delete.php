@@ -29,11 +29,23 @@
             </ul>
         </nav>
     </header>
-
-    <form action="http://public/naturopied_vanilla/assets/php/controller/picture/delete_picture.php" method="POST">
+<h1>Supprimer une Image</h1>
+    <form action="../../assets/php/controller/picture/delete_picture.php" method="POST">
         <div>
-            <label for="id-delete">Id</label>
-            <input type="int" id="id-delete" name="id-delete">
+            <select name="picture-name" id="picture-name">
+                <option value="">-- Choisir une image --</option>
+                <?php
+                    require_once('../../assets/php/middleware/connect.php');
+
+                    $pictures = $db_connect->query("SELECT picture.name FROM picture");
+
+                    foreach($pictures as $picture) {
+                        $picture_name = $picture['name'];
+
+                        echo "<option value='$picture_name'>$picture_name</option>";
+                    }
+                ?>
+            </select>
         </div>
         <button type="submit">Envoyer</button>
     </form>

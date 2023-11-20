@@ -30,7 +30,7 @@
         </nav>
     </header>
     <div>
-        <h1>User</h1>
+        <h1>Créer un User</h1>
         <form action="http://public/naturopied_vanilla/assets/php/controller/user/create_user.php" method="POST">
             <div>
                 <label for="email">Email</label>

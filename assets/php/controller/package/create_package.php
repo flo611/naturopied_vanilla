@@ -1,42 +1,34 @@
+
 <?php
+require_once('../../middleware/connect.php');
 
-$sql = "SELECT user.id as user_id, user.user_email, user.user_alias, 
-               picture.id as picture_id, picture.picture_name
-        FROM user
-        LEFT JOIN picture ON user.id = picture.user_id";
+try {
+   
+    $user_email = $_POST['user-email'];
+    $picture_name = $_POST['picture-name'];
 
 
-if ($result->num_rows > 0) {
-    echo '<form action="process_selection.php" method="post">'; 
+    $sql = "INSERT INTO package(id, user_email, picture_name) VALUES (NULL, :user_email, :picture_name)";
+
+  
+    $stmt = $db_connect->prepare($sql);
+
+  
+    $stmt->bindParam(':user_email', $user_email, PDO::PARAM_STR);
+    $stmt->bindParam(':picture_name', $picture_name, PDO::PARAM_STR);
+
+
+    $stmt->execute();
+
     
-    while ($row = $result->fetch_assoc()) {
-        $userId = $row['user_id'];
-        $userEmail = $row['user_email'];
-        $userAlias = $row['user_alias'];
-        $pictureId = $row['picture_id'];
-        $pictureName = $row['picture_name'];
+    if ($stmt->rowCount() > 0) {
+        // echo "Création réussie. Nouvel ID de package : " . $db_connect->lastInsertId();
+header("Location: http://localhost/public/naturopied_vanilla");
 
-        $userPackage = [
-            'userId' => $userId,
-            'userEmail' => $userEmail,
-            'userAlias' => $userAlias,
-            'picture' => [
-                [
-                    'pictureId' => $pictureId,
-                    'pictureName' => $pictureName,
-                ]
-            ]
-        ];
-
-        echo '<input type="checkbox" name="selectedPictures[]" value="' . $pictureId . '"> ';
-        echo '<label>' . $userAlias . ' - ' . $pictureName . '</label><br>';
-
-        print_r($userPackage);
+    } else {
+        echo "Échec de l'insertion.";
     }
-
-    echo '<input type="submit" value="Valider la sélection">';
-    echo '</form>';
-} else {
-    echo "0 results";
+} catch (PDOException $e) {
+    echo "Erreur : " . $e->getMessage();
 }
 ?>

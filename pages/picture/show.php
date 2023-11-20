@@ -9,9 +9,9 @@
 </head>
 <body>
 <header>
-        <nav>
+        <nav >
             <ul>
-                <li>
+                <li >
                     <a href="../../index.php">Accueil</a>
                 </li>
                 <li>
@@ -42,7 +42,9 @@ require_once('../../assets/php/middleware/connect.php');
 $query_picture = $db_connect->query('SELECT * FROM picture');
 
 foreach ($query_picture as $picture) {
-    echo $picture['url'] . ', ' . $picture['name'] . ', ' . $picture['price'] . ', ' . $picture['location'];
+    $url = $picture['url'];
+    $name = $picture['name'];
+    echo "<img src='$url' alt='$name' width='150px' height='150px' />";
 }
 
 ?>

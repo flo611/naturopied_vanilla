@@ -46,5 +46,20 @@
 
 </form>
 
+<?php
+require_once('../../assets/php/middleware/connect.php');
+
+
+// Récupérer les images disponibles
+$query_pictures = $db_connect->query('SELECT * FROM picture');
+$pictures = $query_pictures->fetchAll(PDO::FETCH_ASSOC);
+
+// Récupérer les utilisateurs
+$query_user = $db_connect->query('SELECT * FROM user');
+$users = $query_user->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+
+
 </body>
 </html>

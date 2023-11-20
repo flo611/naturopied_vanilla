@@ -32,11 +32,24 @@
 
     <h1>Editer un utilisateur</h1>
 
-    <form action="http://public/naturopied_vanilla/assets/php/controller/user/update_user.php" method="POST">
+    <form action="../../assets/php/controller/user/update_user.php" method="POST">
         <div>
-            <label for="id">Id</label>
-            <input type="int" id="id" name="id">
+            <select name="user-email" id="user-email">
+                <option value="">-- Choisir une adresse email --</option>
+                <?php
+                    require_once('../../assets/php/middleware/connect.php');
+
+                    $users = $db_connect->query("SELECT user.email FROM user");
+
+                    foreach($users as $user) {
+                        $user_email = $user['email'];
+
+                        echo "<option value='$user_email'>$user_email</option>";
+                    }
+                ?>
+            </select>
         </div>
+        
         <div>
             <label for="email">Email</label>
             <input type="text" id="email" name="email">

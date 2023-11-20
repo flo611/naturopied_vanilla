@@ -30,8 +30,8 @@
         </nav>
     </header>
     <div>
-        <h1>picture</h1>
-        <form action="http://public/naturopied_vanilla/assets/php/controller/picture/create_picture.php" method="POST">
+        <h1>Créer une image</h1>
+        <form action="../../assets/php/controller/picture/create_picture.php" method="POST">
             <div>
                 <label for="url">url</label>
                 <input type="text" id="url" name="url">

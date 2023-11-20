@@ -32,10 +32,24 @@
 
     <h1>Editer une photo</h1>
 
-    <form action="http://public/naturopied_vanilla/assets/php/controller/picture/update_picture.php" method="POST">
+    <form action="../../assets/php/controller/picture/update_picture.php" method="POST">
         <div>
-            <label for="id">Id</label>
-            <input type="int" id="id" name="id">
+            <div>
+                <select name="picture-name" id="picture-name">
+                    <option value="">-- Choisir une image --</option>
+                    <?php
+                        require_once('../../assets/php/middleware/connect.php');
+
+                        $pictures = $db_connect->query("SELECT picture.name FROM picture");
+
+                        foreach($pictures as $picture) {
+                            $picture_name = $picture['name'];
+
+                            echo "<option value='$picture_name'>$picture_name</option>";
+                        }
+                    ?>
+                </select>
+            </div>
             <div>
                 <label for="url">url</label>
                 <input type="text" id="url" name="url">

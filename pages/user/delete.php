@@ -29,12 +29,22 @@
             </ul>
         </nav>
     </header>
+<h1>Supprimer un User</h1>
+    <form action="../../assets/php/controller/user/delete_user.php" method="POST">
+        <select name="user-email" id="user-email">
+                <option value="">-- Choisir une adresse email --</option>
+                <?php
+                    require_once('../../assets/php/middleware/connect.php');
 
-    <form action="http://public/naturopied_vanilla/assets/php/controller/user/delete_user.php" method="POST">
-        <div>
-            <label for="id-delete">Id</label>
-            <input type="int" id="id-delete" name="id-delete">
-        </div>
+                    $users = $db_connect->query("SELECT user.email FROM user");
+
+                    foreach($users as $user) {
+                        $user_email = $user['email'];
+
+                        echo "<option value='$user_email'>$user_email</option>";
+                    }
+                ?>
+            </select>
         <button type="submit">Envoyer</button>
     </form>
 </body>
