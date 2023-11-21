@@ -9,40 +9,42 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li>
+        <nav class="nav nav-color">
+            <ul class="container">
+                <li class="nav-padding">
                     <a href="../../index.php">Accueil</a>
                 </li>
-                <li>
+                <li >
                     <a href="./show.php">Afficher</a>
                 </li>
-                <li>
+                <li class="nav-padding">
                     <a href="./create.php">Créer</a>
                 </li>
                 <li>
                     <a href="./update.php">Editer</a>
                 </li>
-                <li>
+                <li class="nav-padding">
                     <a href="./delete.php">Supprimer</a>
                 </li>
             </ul>
         </nav>
     </header>
     <div>
-        <h1>Créer un User</h1>
-        <form action="http://public/naturopied_vanilla/assets/php/controller/user/create_user.php" method="POST">
+        <h1 class="title">Créer un User</h1>
+        <form action="http://public/naturopied_vanilla/assets/php/controller/user/create_user.php" method="POST" class="form-size">
             <div>
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email">
+            <div>
+                <label for="email" class="label-margin">Email</label>
+                <input type="text" id="email" name="email" class="input-field">
             </div>
             <div>
-                <label for="alias">Pseudonyme</label>
-                <input type="text" id="alias" name="alias">
+                <label for="alias" class="label-margin">Pseudonyme</label>
+                <input type="text" id="alias" name="alias" class="input-field">
             </div>
             <div>
-                <label for="password">Mot de passe</label>
-                <input type="password" id="password" name="password">
+                <label for="password" class="label-margin">Mot de passe</label>
+                <input type="password" id="password" name="password" class="input-field">
+            </div>
             </div>
             <button type="submit">Envoyer</button>
         </form>

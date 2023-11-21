@@ -9,18 +9,18 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
+        <nav class="nav nav-color">
+            <ul class="container">
                 <li>
                     <a href="../../index.php">Accueil</a>
                 </li>
-                <li>
+                <li class="nav-padding">
                     <a href="./show.php">Afficher</a>
                 </li>
                 <li>
                     <a href="./create.php">Créer</a>
                 </li>
-                <li>
+                <li class="nav-padding">
                     <a href="./update.php">Editer</a>
                 </li>
                 <li>
@@ -29,8 +29,8 @@
             </ul>
         </nav>
     </header>
-<h1>Supprimer un User</h1>
-    <form action="../../assets/php/controller/user/delete_user.php" method="POST">
+<h1 class="title">Supprimer un User</h1>
+    <form action="../../assets/php/controller/user/delete_user.php" method="POST" class="form-size">
         <select name="user-email" id="user-email">
                 <option value="">-- Choisir une adresse email --</option>
                 <?php

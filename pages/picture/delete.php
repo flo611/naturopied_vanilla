@@ -9,18 +9,18 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
+        <nav class="nav nav-color">
+            <ul class="container">
                 <li>
                     <a href="../../index.php">Accueil</a>
                 </li>
-                <li>
+                <li class="nav-padding">
                     <a href="./show.php">Afficher</a>
                 </li>
                 <li>
                     <a href="./create.php">Créer</a>
                 </li>
-                <li>
+                <li class="nav-padding">
                     <a href="./update.php">Editer</a>
                 </li>
                 <li>
@@ -29,8 +29,8 @@
             </ul>
         </nav>
     </header>
-<h1>Supprimer une Image</h1>
-    <form action="../../assets/php/controller/picture/delete_picture.php" method="POST">
+<h1 class="title">Supprimer une Image</h1>
+    <form action="../../assets/php/controller/picture/delete_picture.php" method="POST" class="form-size">
         <div>
             <select name="picture-name" id="picture-name">
                 <option value="">-- Choisir une image --</option>

@@ -9,18 +9,18 @@
 </head>
 <body>
 <header>
-        <nav>
-            <ul>
+        <nav class="nav nav-color">
+            <ul class="container">
                 <li>
                     <a href="../../index.php">Accueil</a>
                 </li>
-                <li>
+                <li class="nav-padding">
                     <a href="./show.php">Afficher</a>
                 </li>
                 <li>
                     <a href="./create.php">Créer</a>
                 </li>
-                <li>
+                <li class="nav-padding">
                     <a href="./update.php">Editer</a>
                 </li>
                 <li>
@@ -33,11 +33,11 @@
 
 
 
-<h1>Liste des packages</h1>
+<h1 class="title">Liste des packages</h1>
 
 
 
-
+<div class="form-size">
 <?php
     require_once('../../assets/php/middleware/connect.php');
 
@@ -54,7 +54,7 @@
                 
                 echo "Email : " . $row["email"] . "<br>";
                 echo "Nom de l'image : " . $row["name"] . "<br>";
-        
+                
             }
         } else {
             echo "Aucun résultat trouvé.";
@@ -64,6 +64,6 @@
     }
 ?>
 
-
+</div>
 
 

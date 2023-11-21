@@ -9,18 +9,18 @@
 </head>
 <body>
     <header>
-            <nav>
-                <ul>
+            <nav class="nav nav-color">
+                <ul class="container">
                     <li>
                         <a href="../../index.php">Accueil</a>
                     </li>
-                    <li>
+                    <li class="nav-padding">
                         <a href="./show.php">Afficher</a>
                     </li>
                     <li>
                         <a href="./create.php">Créer</a>
                     </li>
-                    <li>
+                    <li class="nav-padding">
                         <a href="./update.php">Editer</a>
                     </li>
                     <li>
@@ -30,8 +30,9 @@
             </nav>
         </header>
 
-    <h1>Supprimer un Package </h1>
-    <form action="../../assets/php/controller/package/delete_package.php" method="post">
+    <h1 class="title">Supprimer un Package </h1>
+    <form action="../../assets/php/controller/package/delete_package.php" method="post" class="form-size
+    ">
             <div>
                 <select name="picture-name" id="picture-name">
                     <option value="">-- Choisir une image --</option>
@@ -48,7 +49,7 @@
                             ?>
                 </select>
             </div>
-        <button type="submit">Delete Package</button>
+        <button type="submit">Envoyer</button>
     </form>
 
 </body>

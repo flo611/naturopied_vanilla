@@ -9,18 +9,18 @@
 </head>
 <body>
 <header>
-        <nav>
-            <ul>
+        <nav class="nav nav-color">
+            <ul class="container">
                 <li>
                     <a href="../../index.php">Accueil</a>
                 </li>
-                <li>
+                <li class="nav-padding">
                     <a href="./show.php">Afficher</a>
                 </li>
                 <li>
                     <a href="./create.php">Créer</a>
                 </li>
-                <li>
+                <li class="nav-padding">
                     <a href="./update.php">Editer</a>
                 </li>
                 <li>
@@ -30,11 +30,11 @@
         </nav>
     </header>
 
-    <h1>Créer un Package</h1>
-    <form action="../../assets/php/controller/package/create_package.php" method="POST">
-
-        <div>
-            <select name="user-email" id="user-email">
+    <h1 class="title">Créer un Package</h1>
+    <form action="../../assets/php/controller/package/create_package.php" method="POST" class="form-size">
+<div>
+        <div class="form-margin label-margin">
+            <select name="user-email" id="user-email" >
                 <option value="">-- Choisir une adresse email --</option>
                 <?php
                         require_once('../../assets/php/middleware/connect.php');
@@ -50,7 +50,7 @@
             </select>
         </div>
 
-        <div>
+        <div class="form-margin label-margin ">
             <select name="picture-name" id="picture-name">
                 <option value="">-- Choisir une image --</option>
                 <?php
@@ -66,6 +66,7 @@
                         ?>
             </select>
         </div>
-
+</div>
         <button type="submit">Envoyer</button>
+       
     </form>

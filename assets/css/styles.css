@@ -3,21 +3,41 @@ body {
   background-color: rgb(173, 105, 31);
   color: white;
   margin: 0;
+  font-family: Arial, sans-serif
+}
+
+.bloc-home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
 
 .container {
   display: flex;
-  flex-direction: column;
-  height: 100vh;
+  flex-direction: row;
   width: 100%;
   color: aliceblue;
   justify-content: center;
-  align-items: center; 
+  align-items: top; 
   box-sizing: border-box; 
   text-align: center; 
+  list-style-type: none;
+  font-size: x-large;
+  text-decoration:none ;
 }
 
-.nav{
+.nav-padding {
+padding-right: 60px;
+padding-left: 60px;
+}
+
+.nav-color{
+  background-color: black;
+  border-radius: 25px;
+}
+
+.nav a{
 
   padding: 10px;
   color: white;
@@ -27,5 +47,82 @@ body {
   text-transform: uppercase;
   padding-right: 50px;
   padding-left: 50px;
+  text-decoration: none;
+  color: rgb(255, 179, 0);
 }
 
+
+.title{
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
+  padding-top: 60px;
+}
+.welcome-message {
+  display: flex;
+  margin-top: 150px;
+justify-content: center;
+font-size: x-large;
+align-items: center;
+}
+
+.image-container {
+  text-align: center;
+  margin: 10px;
+}
+
+.image-container img {
+  width: 400px;
+  height: 400px;
+  margin: 60px;
+}
+
+.form-size {
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.form-margin {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.label-margin {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.margin-desc{
+  margin-right: -20px;
+  margin-left: -20px;
+}
+.input-field {
+  padding: 5px;
+  box-sizing: border-box;
+  width: 100%; 
+}
+
+button {
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 60px;
+  padding-left: 60px;
+  background-color: #704c11;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2a2907;
+}
+select {
+  width: 200px; 
+}

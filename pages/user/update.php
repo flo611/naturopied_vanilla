@@ -9,18 +9,18 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
+        <nav class="nav nav-color">
+            <ul class="container">
                 <li>
                     <a href="../../index.php">Accueil</a>
                 </li>
-                <li>
+                <li class="nav-padding">
                     <a href="./show.php">Afficher</a>
                 </li>
                 <li>
                     <a href="./create.php">Créer</a>
                 </li>
-                <li>
+                <li class="nav-padding">
                     <a href="./update.php">Editer</a>
                 </li>
                 <li>
@@ -30,9 +30,9 @@
         </nav>
     </header>
 
-    <h1>Editer un utilisateur</h1>
+    <h1 class="title">Editer un utilisateur</h1>
 
-    <form action="../../assets/php/controller/user/update_user.php" method="POST">
+    <form action="../../assets/php/controller/user/update_user.php" method="POST" class="form-size">
         <div>
             <select name="user-email" id="user-email">
                 <option value="">-- Choisir une adresse email --</option>
@@ -49,18 +49,19 @@
                 ?>
             </select>
         </div>
-        
         <div>
-            <label for="email">Email</label>
-            <input type="text" id="email" name="email">
+        <div>
+            <label for="email" class="label-margin">Email</label>
+            <input type="text" id="email" name="email" class="input-field">
         </div>
         <div>
-            <label for="alias">Pseudonyme</label>
-            <input type="text" id="alias" name="alias">
+            <label for="alias" class="label-margin">Pseudonyme</label>
+            <input type="text" id="alias" name="alias" class="input-field">
         </div>
         <div>
-            <label for="password">Mot de passe</label>
-            <input type="password" id="password" name="password">
+            <label for="password" class="label-margin">Mot de passe</label>
+            <input type="password" id="password" name="password" class="input-field">
+        </div>
         </div>
         <button type="submit">Envoyer</button>
     </form>

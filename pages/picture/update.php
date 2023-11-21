@@ -9,18 +9,18 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
+        <nav class="nav nav-color">
+            <ul class="container">
                 <li>
                     <a href="../../index.php">Accueil</a>
                 </li>
-                <li>
+                <li class="nav-padding">
                     <a href="./show.php">Afficher</a>
                 </li>
                 <li>
                     <a href="./create.php">Créer</a>
                 </li>
-                <li>
+                <li class="nav-padding">
                     <a href="./update.php">Editer</a>
                 </li>
                 <li>
@@ -30,11 +30,11 @@
         </nav>
     </header>
 
-    <h1>Editer une photo</h1>
+    <h1 class="title">Editer une photo</h1>
 
-    <form action="../../assets/php/controller/picture/update_picture.php" method="POST">
+    <form action="../../assets/php/controller/picture/update_picture.php" method="POST" class="form-size">
         <div>
-            <div>
+            <div class="">
                 <select name="picture-name" id="picture-name">
                     <option value="">-- Choisir une image --</option>
                     <?php
@@ -51,25 +51,26 @@
                 </select>
             </div>
             <div>
-                <label for="url">url</label>
-                <input type="text" id="url" name="url">
+                <label class="label-margin" for="url">URL</label>
+                <input type="text" id="url" name="url"  class="input-field">
             </div>
             <div>
-                <label for="name">Nom</label>
-                <input type="text" id="name" name="name">
+                <label class="label-margin" for="name">Nom</label>
+                <input type="text" id="name" name="name"  class="input-field">
             </div>
             <div>
-                <label for="description">Description</label>
-                <input type="text" id="description" name="description">
+                <label class="label-margin" for="description">Description</label>
+                <input type="text" id="description" name="description"  class="input-field">
             </div>
+            
+            <div>
+                <label class="label-margin" for="price">Prix</label>
+                <input type="double" id="price" name="price"  class="input-field">
             </div>
             <div>
-                <label for="price">Prix</label>
-                <input type="double" id="price" name="price">
+                <label class="label-margin" for="location">Location</label>
+                <input type="text" id="location" name="location"  class="input-field">
             </div>
-            <div>
-                <label for="location">location</label>
-                <input type="text" id="location" name="location">
             </div>
             <button type="submit">Envoyer</button>
     </form>
