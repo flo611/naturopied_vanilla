@@ -33,7 +33,7 @@
 
 
 
-<h1 class="title">Liste des pictures</h1>
+<h1 class="title">Liste </h1>
 
 <div class="image-container">
 <?php 

@@ -13,6 +13,11 @@ body {
   width: 100%;
 }
 
+.list-padding{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .container {
   display: flex;
   flex-direction: row;
@@ -59,8 +64,8 @@ padding-left: 60px;
   padding-top: 60px;
 }
 .welcome-message {
-  display: flex;
-  margin-top: 150px;
+display: flex;
+margin-top: 150px;
 justify-content: center;
 font-size: x-large;
 align-items: center;
@@ -125,4 +130,6 @@ button:hover {
 }
 select {
   width: 200px; 
+  padding-top: 10px;
+  padding-bottom:10px ;
 }

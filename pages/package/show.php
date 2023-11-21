@@ -33,11 +33,12 @@
 
 
 
-<h1 class="title">Liste des packages</h1>
+<h1 class="title">Liste</h1>
 
 
 
 <div class="form-size">
+
 <?php
     require_once('../../assets/php/middleware/connect.php');
 
@@ -51,10 +52,12 @@
         if ($result->rowCount() > 0) {
     
             foreach ($result as $row) {
-                
+                echo '<div style="padding-top: 60px; ">','</div>';
                 echo "Email : " . $row["email"] . "<br>";
+                echo '<div style="padding-top: 10px; padding-bottom: 10px;">';
                 echo "Nom de l'image : " . $row["name"] . "<br>";
-                
+                echo '</div>';
+                echo '<img src="' . $row["url"] . '" alt="Image" width="150px" height="150px"><br>';
             }
         } else {
             echo "Aucun résultat trouvé.";
